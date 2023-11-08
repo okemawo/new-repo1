@@ -3,6 +3,10 @@
 
 This guide provides step-by-step instructions and results for running two mapreduce jobs on a managed hadoop cluster using [Google Dataproc](https://cloud.google.com/dataproc?hl=en)  
 
+## Prerequiste
+- Create a dataproc cluster using the cloud console 
+- Establish a SSH connection with the master node
+
 <br>
 
 ## Question 1
@@ -11,16 +15,12 @@ temperature in every day of the years 1901 and 1902 from the National Climate
 Data Center weather records. The records exit in two files which represent each year. 
 
 ### Finding the Max temperature without a combiner 
-- Create a dataproc cluster using the cloud console 
-- Establish a SSH connection with the master node
 - Upload the map, reduce and data files on the local file system of the master node
 - Copy the data files from the local file system to HDFS
 - Run the Map Reduce Job
 - Collect stats
 
 ### Finding the max temperature with a combiner 
-- Create a dataproc cluster using the cloud console 
-- Establish a SSH connection with the master node
 - Upload the map, combiner, reduce and data files on the local file system of the master node
 - Copy the data files from the local file system to HDFS
 - Run the Map Reduce Job
