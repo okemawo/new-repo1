@@ -3,15 +3,6 @@
 
 This guide provides step-by-step instructions to run two mapreduce jobs on a managed hadoop cluster using [Google Dataproc](https://cloud.google.com/dataproc?hl=en)  
 
-#### URLs for the Docker Hub images that were used
-- [sa-frontend-cloud: Front-end](https://hub.docker.com/r/okemawo1/sa-frontend-cloud) 
-- [sa-webapp-cloud: Java back-end](https://hub.docker.com/r/okemawo1/sa-webapp-cloud)
-- [sa-logic-cloud: Python back-end](https://hub.docker.com/r/okemawo1/sa-logic-cloud)
-
-#### URLs for the video recordings
-- [The application functionality demo on the cloud](https://drive.google.com/file/d/1HuzNS0RCTWZ8e8wyRsG4ntgedPzni69w/view?usp=sharing)
-- [Code walkthrough for your code changes](https://drive.google.com/file/d/1TBoXN09Vl85EioJaVPjRcoaFDqC3j1cu/view?usp=sharing)
-
 <br>
 <br>
 
