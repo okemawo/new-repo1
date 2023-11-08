@@ -136,15 +136,19 @@ hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
 
 - Collect stats
 <p align="center">
-<img width="710" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/bbe6496b-6c78-4f26-9665-181a72feb717">
+<img width="651" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/bd02db7e-401f-40f2-a8ff-4e51e6f92465">
 </p>
 
 <br>
 
 - Get the results
 ```bash
-hadoop fs -get /OutputFolder/ output.txt
+hadoop fs -get /OutputFolder/part-00000 output.txt
 ```
+<p align="center">
+<img width="662" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/38028786-d1a8-4c2a-a0f8-217cfef75df0">
+</p>
+
 <br>
 
 <br>
