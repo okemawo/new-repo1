@@ -50,14 +50,48 @@ hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
 <img width="848" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/2b0f356d-d89d-4a5b-99b9-f2a43a25f34c">
 </p>
 
-- Collect stats
+- Collect stats after running the job and check the output folder
+<p align="center">
+<img width="641" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/f1571445-c726-4a6b-98b9-225b18027b28">
+</p>
 
+- Merge the result into a single output file
+```bash
+hadoop fs -getmerge /OutputFolder/ output.txt
+```
+<br>
+
+<br>
 
 ### Finding the max temperature with a combiner 
 - Upload the map, combiner, reduce and data files on the local file system of the master node
+<p align="center">
+<img width="678" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/c36e5a02-1c81-4f7e-951d-bb01053cfbf8">
+</p>
 - Copy the data files from the local file system to HDFS
-- Run the Map Reduce Job
-- Collect stats
+<p align="center">
+<img width="672" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/b94820a0-dcff-43a1-8740-01b91c10fd59">
+</p>
+
+- Run the Map Reduce Job with the combiner using the follwing command
+```bash
+hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
+-file temperature_mapper.py \
+-mapper 'python temperature_mapper.py' \
+-file temperature_reducer.py \
+-reducer 'python temperature_reducer.py' \
+-file temperature_combiner.py \
+-combiner 'python temperature_combiner.py' \
+-input ./data/ \
+-output /OutputFolder
+```
+<p align="center">
+<img width="719" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/7252a785-9192-468e-adb0-8704dcc24bdf">
+</p>
+- Collect stats after running the job and check the output folder
+<p align="center">
+<img width="701" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/656a9763-ea92-4bf6-a956-263350c69246">
+</p>
 
 <br>
 <br>
