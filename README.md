@@ -30,9 +30,28 @@ Data Center weather records. The records exit in two files which represent each 
 <p align="center">
 <img width="678" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/619a3f93-3aa9-48db-bf47-1e70937ed80d">
 </p>
+
 - Copy the data files from the local file system to HDFS
-- Run the Map Reduce Job
+<p align="center">
+<img width="848" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/96a3a047-512d-4354-b5fe-b3ea4aa571aa">
+</p>
+
+- Run the Map Reduce job using the following command
+```bash
+hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
+-file temperature_mapper.py \
+-mapper 'python temperature_mapper.py' \
+-file temperature_reducer.py \
+-reducer 'python temperature_reducer.py' \
+-input ./data \
+-output /OutputFolder
+```
+<p align="center">
+<img width="848" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/2b0f356d-d89d-4a5b-99b9-f2a43a25f34c">
+</p>
+
 - Collect stats
+
 
 ### Finding the max temperature with a combiner 
 - Upload the map, combiner, reduce and data files on the local file system of the master node
