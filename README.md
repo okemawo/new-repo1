@@ -7,8 +7,6 @@ This guide provides step-by-step instructions and results for running two mapred
 - Create a dataproc cluster using the cloud console 
 - Establish a SSH connection with the master node
 
-<br>
-
 ## Question 1
 Here we reate a Hadoop MapReduce application to find the maximum 
 temperature in every day of the years 1901 and 1902 from the National Climate 
