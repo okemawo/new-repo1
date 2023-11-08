@@ -1,7 +1,7 @@
 
-# Microservices Orchestration on the Cloud
+# Hadoop MapReduce on the Cloud
 
-This guide provides step-by-step instructions to deploy the application from the [k8s-mastery](https://github.com/rinormaloku/k8s-mastery) repository on Google Kubernetes Engine (GKE).
+This guide provides step-by-step instructions to run two jobs on a managed hadoop cluster using [Google Dataproc](https://github.com/rinormaloku/k8s-mastery)  
 
 #### URLs for the Docker Hub images that were used
 - [sa-frontend-cloud: Front-end](https://hub.docker.com/r/okemawo1/sa-frontend-cloud) 
