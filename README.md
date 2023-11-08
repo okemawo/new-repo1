@@ -88,11 +88,12 @@ hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
 <p align="center">
 <img width="719" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/7252a785-9192-468e-adb0-8704dcc24bdf">
 </p>
+
 - Collect stats after running the job and check the output folder
+<br>
 <p align="center">
 <img width="701" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/656a9763-ea92-4bf6-a956-263350c69246">
 </p>
-
 <br>
 <br>
 
@@ -109,8 +110,43 @@ words using MapReduce fron a collection of text files. Top-N algorithm structure
 <br>
 
 - Upload the map, combiner, reduce and data files on the local file system of the master node
+<p align="center">
+<img width="722" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/72bf635b-8c94-43c4-ab1f-ec79879599a8">
+</p>
+
 - Copy the data files from the local file system to HDFS
-- Run the Map Reduce Job
+<p align="center">
+<img width="718" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/e789160f-2c5c-4a52-a4da-d5ae3df149b2">
+</p>
+
+- Run the Map Reduce Job using the following command with only one reducer
+```bash
+hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
+-file top_n_mapper.py \
+-mapper 'python top_n_mapper.py' \
+-file top_n_reducer.py \
+-reducer 'python top_n_reducer.py' \
+-input ./data/ \
+-output /OutputFolder
+-numReduceTasks 1
+```
+<p align="center">
+<img width="716" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/e1b1fe2f-69ce-4248-84b0-6547f7ffd1e7">
+</p>
+
 - Collect stats
+<p align="center">
+<img width="710" alt="image" src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/bbe6496b-6c78-4f26-9665-181a72feb717">
+</p>
+
+<br>
+
+- Get the results
+```bash
+hadoop fs -get /OutputFolder/ output.txt
+```
+<br>
+
+<br>
 
 # ALL DONE!!!
