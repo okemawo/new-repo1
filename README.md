@@ -1,48 +1,51 @@
 
 # Hadoop MapReduce on the Cloud
 
-This guide provides step-by-step instructions to run two mapreduce jobs on a managed hadoop cluster using [Google Dataproc](https://cloud.google.com/dataproc?hl=en)  
+This guide provides step-by-step instructions and results for running two mapreduce jobs on a managed hadoop cluster using [Google Dataproc](https://cloud.google.com/dataproc?hl=en)  
 
 <br>
+
+## Question 1
+Here we reate a Hadoop MapReduce application to find the maximum 
+temperature in every day of the years 1901 and 1902 from the National Climate 
+Data Center weather records. The records exit in two files which represent each year. 
+
+### Finding the Max temperature without a combiner 
+- Create a dataproc cluster using the cloud console 
+- Establish a SSH connection with the master node
+- Upload the map, reduce and data files on the local file system of the master node
+- Copy the data files from the local file system to HDFS
+- Run the Map Reduce Job
+- Collect stats
+
+### Finding the max temperature with a combiner 
+- Create a dataproc cluster using the cloud console 
+- Establish a SSH connection with the master node
+- Upload the map, combiner, reduce and data files on the local file system of the master node
+- Copy the data files from the local file system to HDFS
+- Run the Map Reduce Job
+- Collect stats
+
+<br>
+<br>
+
+## Question 2
+Here we develop an efficient algorithm to find the most frequent 10
+words using MapReduce fron a collection of text files. Top-N algorithm structure is shown below.
+
 <br>
 
 <p align="center">
-  <img src="https://github.com/Cloud-Infrastructure-Fall-2023/hw-3-microservice-orchestration-okemawo/assets/65502643/94ec9ea9-a67b-4de3-a15e-a853f7fb9a1f" alt="Deployment Diagram">
+<img src="https://github.com/Cloud-Infrastructure-Fall-2023/homework-6-hadoop-mapreduce-on-the-cloud-okemawo/assets/65502643/9570b3eb-b1d6-46f6-b96c-5f23b693b09c">
 </p>
+
 <br>
 
-## Prerequisites
-
-- [Google Cloud Platform (GCP) account](https://console.cloud.google.com/)
-- [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) installed
-- `kubectl` (Kubernetes command-line tool) installed
-- [Docker](https://www.docker.com/get-started) installed
-- [nodeJs](https://nodejs.org/en) installed
-- [npm](https://www.npmjs.com/) installed
-- [maven](https://maven.apache.org/what-is-maven.html) installed
-- [jdk](https://www.oracle.com/java/technologies/downloads/) installed
-
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/rinormaloku/k8s-mastery.git
-```
-<br>
-
-### Login to docker hub 
-- You will be promted to input your username and password or access token 
-```bash
-docker login
-```
-<br>
-
-### Install Software Tools
-- Docker
-```bash
-apt install docker.io
-docker --version
-```
-
+- Create a dataproc cluster using the cloud console 
+- Establish a SSH connection with the master node
+- Upload the map, combiner, reduce and data files on the local file system of the master node
+- Copy the data files from the local file system to HDFS
+- Run the Map Reduce Job
+- Collect stats
 
 # ALL DONE!!!
