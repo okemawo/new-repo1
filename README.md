@@ -1,7 +1,7 @@
 
 # Hadoop MapReduce on the Cloud
 
-This guide provides step-by-step instructions to run two jobs on a managed hadoop cluster using [Google Dataproc](https://github.com/rinormaloku/k8s-mastery)  
+This guide provides step-by-step instructions to run two mapreduce jobs on a managed hadoop cluster using [Google Dataproc](https://cloud.google.com/dataproc?hl=en)  
 
 #### URLs for the Docker Hub images that were used
 - [sa-frontend-cloud: Front-end](https://hub.docker.com/r/okemawo1/sa-frontend-cloud) 
